@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Document Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>AI Document Assistant</h1>
+            <p>Upload your PDF and ask anything about it.</p>
+        </header>
+
+        <main>
+
+            <!-- PDF Upload Section -->
+            <section class="upload-section">
+
+                <h2>Upload Your Document</h2>
+
+                <input type="file" id="pdfFile" accept=".pdf">
+
+                <button id="uploadBtn">Upload PDF</button>
+
+                <button id="summarizeBtn">Summarize PDF</button>
+
+                <p id="uploadStatus"></p>
+
+            </section>
+
+            <!-- Chat Section -->
+            <section class="chat-section">
+
+                <h2>Ask Your Questions</h2>
+
+                <div class="session-section">
+
+                    <label for="sessionSelect">Choose Chat Session:</label>
+
+                    <select id="sessionSelect">
+                        <option value="frontend_chat">Frontend Chat</option>
+                        <option value="python_notes">Python Notes</option>
+                        <option value="default">Default Chat</option>
+                    </select>
+
+                </div>
+                <button id="downloadTxtBtn">Download Answer (TXT)</button>
+                <button id="downloadPdfBtn">Download Answer (PDF)</button>
+                <div id="chatBox"></div>
+
+                <button id="newChatBtn">+ New Chat</button>
+
+                <button id="deleteChatBtn">Delete Current Chat</button>
+
+                <button id="historyBtn">View Chat History</button>
+
+                <div id="chatBox">
+
+                    <p class="welcome">
+                        Hello! Upload a PDF to get started.
+                    </p>
+
+                </div>
+
+                <div class="question-area">
+
+                    <input type="text" id="questionInput" placeholder="Ask something about your PDF...">
+
+                    <button id="askBtn">Ask</button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
